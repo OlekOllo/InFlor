@@ -1,0 +1,49 @@
+:root {
+  /* Фоновые цвета */
+  --color-background: #f9f9f9;
+  --color-background-dark: 	#1e1e1e;
+  --color-surface: #ffffff;
+  --color-surface-alt: #fafafa;
+  --color-surface-sidebar: #eef2f6;
+  --color-surface-table: #f4f6f8;
+  --color-hover-surface: #dbe9ff;
+  /* --color-table-header: #e6f0fc; */
+  --color-modal-overlay: rgba(0, 0, 0, 0.4);
+  --color-modal-bg: #ffffffcc;
+
+  /* Цвета текста */
+  --color-text: #333333;
+  --color-text-muted: #666666;
+  --color-text-white: #ffffff;
+  --color-text-link: #4a90e2;
+
+  /* Цвета границ */
+  --color-border: #e0e0e0;
+
+  /* Акцентные цвета */
+  --color-primary: #4a90e2;
+  --color-primary-dark: #1c86ff;
+  --color-secondary: #50e3c2;
+
+  /* Цвета статусов */
+  --color-success-bg: #d1f4e0;
+  --color-success-text: #0f8d6d;
+  --color-info-bg: #d9f0f4;
+  --color-info-text: #008b9e;
+  --color-error-bg: #ffe0e0;
+  --color-error-text: #d53939;
+  --color-warning: #ffd54f;
+  --color-info: #64b5f6;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--color-background);
+  margin: 0;
+  padding: 0;
+}
+
+.crm {
+  display: flex;
+  height: 100vh;
+}

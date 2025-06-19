@@ -1,0 +1,49 @@
+.sidebar {
+  background: var(--color-surface-sidebar);
+  padding: 2rem 1rem;
+  width: 14rem;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem; 
+    // transform: translateY(-5px);
+    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    // padding: 1rem;
+    // border-radius: 1rem;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 10px;
+
+    li {
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      margin-bottom: 0.5rem;
+
+      a {
+        color: var(--color-text);
+      }
+
+      &.active {
+        background-color: var(--color-primary);
+
+        & a {
+          color: var(--color-text-white);
+        }
+      }
+
+      &:hover {
+        background-color: var(--color-hover-surface);
+        & a {
+          color: var(--color-text);
+        }
+      }
+
+      a {
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

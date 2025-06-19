@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InFlor_crm</title>
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/modal.css">
+</head>
+
+<body>
+  <div class="crm">
+    <aside class="sidebar">
+      <h1>InFlor</h1>
+     	<nav>
+				<ul>
+					<a href="./customers.html">
+						<li>Заказчики</li>
+					</a>
+					<a href="./sales.html">
+						<li class="active">Продажи</li>
+					</a>
+					<a href="./instock.html">
+						<li>Склад</li>
+					</a>
+					<a href="./data.html">
+						<li>Статистика</li>
+					</a>
+				</ul>
+			</nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h2>Продано</h2>
+        <div> <input type="text" id="search" class="search" placeholder="Поиск ..."> <button
+            id="searchCancel">сбросить</button> </div>
+        <button id="add-button" class="add-button"><img src="../images/icon-add.png" alt="добавить"></button>
+      </header>
+
+      <!-- Модальное окно -->
+      <div id="modal" class="modal hidden">
+        <h3>Добавить продажу</h3>
+        <form method="POST" id="form" action="/sales/add">
+          <input id="customerInput" placeholder="Заказчик" name="customer" list="customersList" autocomplete="off"
+            required>
+          <datalist id="customersList">
+            <!-- Здесь будут опции заказчиков -->
+          </datalist>
+          <input id="productInput" placeholder="Товар" name="product" list="productsList" autocomplete="off" required>
+          <datalist id="productsList">
+            <!-- Здесь будут опции товаров -->
+          </datalist>
+          <input type="text" id="quantityInput" placeholder="Количество" />
+          <input type="text" id="noteInput" placeholder="Примечание" />
+          <div class="modal-buttons">
+            <button type="submit" id="saveBtn" class="save">Сохранить</button>
+            <button type="button" id="cancel" class="cancel"><img src="../images/Icon-Close.png" alt=""></button>
+          </div>
+        </form>
+      </div>
+
+      <section class="recent-orders">
+        <table>
+          <thead>
+            <tr>
+              <th id="sortCustomer" class="sortable">Заказчик<span class="sort-arrow arrow-customer">▲</span></th>
+              <th>Товар</th>
+              <th>Количество</th>
+              <th>Примечание</th>
+            </tr>
+          </thead>
+          <tbody id="tBody">
+          </tbody>
+        </table>
+      </section>
+
+
+
+      <script type="module" src="../script/UI.js"></script>
+      <script type="module" src="../script/modal.js"></script>
+      <script type="module" src="../script/sales.js"></script>
+    </main>
+  </div>
+</body>
+
+</html>

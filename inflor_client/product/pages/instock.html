@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InFlor_crm</title>
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/modal.css">
+</head>
+
+<body>
+  <div class="crm">
+    <aside class="sidebar">
+      <h1>InFlor</h1>
+      	<nav>
+				<ul>
+					<a href="./customers.html">
+						<li>Заказчики</li>
+					</a>
+					<a href="./sales.html">
+						<li>Продажи</li>
+					</a>
+					<a href="./instock.html">
+						<li class="active">Склад</li>
+					</a>
+					<a href="./data.html">
+						<li>Статистика</li>
+					</a>
+				</ul>
+			</nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h2>На складе</h2>
+        <div> <input type="text" id="search" class="search" placeholder="Поиск ..."> <button
+            id="searchCancel">сбросить</button> </div>
+        <button id="add-button" class="add-button"><img src="../images/icon-add.png" alt="добавить"></button>
+      </header>
+
+      <!-- Модальное окно -->
+      <div id="modal" class="modal hidden">
+        <h3>Добавить товар</h3>
+        <form method="POST" id="form" action="/product/add">
+          <input id="productInput" placeholder="Товар" name="product" list="instockProductsList" autocomplete="off" required>
+          <datalist id="instockProductsList">
+            <!-- Опции товаров будут добавлены скриптом -->
+          </datalist>
+          <input type="text" id="priceInput" placeholder="Цена" required />
+          <input type="text" id="quantityInput" placeholder="Количество" />
+          <input type="text" id="noteInput" placeholder="Примечание" />
+        
+          <div class="modal-buttons">
+            <button type="submit" id="saveBtn" class="save">Сохранить</button>
+            <button type="button" id="cancel" class="cancel"><img src="../images/Icon-Close.png" alt=""></button>
+          </div>
+        </form>
+      </div>
+
+      <section class="recent-orders">
+        <table>
+          <thead>
+            <tr>
+              <th id="sort" class="sortable">Наименование<span class="sort-arrow">▲</span></th>
+              <th>Цена</th>
+              <th>Количество</th>
+              <th>Примечание</th>
+            </tr>
+          </thead>
+          <tbody id="tBody">
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  
+
+  <script type="module" src="../script/UI.js"></script>
+  <script type="module" src="../script/product.js"></script>
+  <script type="module" src="../script/modal.js"></script>
+</body>
+
+</html>

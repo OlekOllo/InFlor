@@ -1,0 +1,27 @@
+#contextMenu {
+  max-width: 14rem;
+  width: 100%;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: white;
+
+  position: relative;
+
+  .menu-item {
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 0.9375rem;
+    color: #222;
+
+    &:hover {
+      background: var(--color-hover-surface);
+    }
+    &:active {
+      background-color: var(--color-hover-surface);
+      color: var(--color-text);
+    }
+  }
+}
+
